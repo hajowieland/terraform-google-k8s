@@ -7,3 +7,6 @@
 
 # .tfvars files
 *.tfvars
+
+# Google Cloud account.json file
+account.json
