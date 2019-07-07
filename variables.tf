@@ -1,24 +1,20 @@
 variable "enable_google" {
-  description = "Enable / Disable Google (e.g. `1`)"
+  description = "Enable / Disable Google Cloud k8s (e.g. `true`)"
   type        = bool
-  default     = false
+  default     = true
 }
 
-variable "workstation_ipv4" {
-  description = "Workstation external IPv4 address"
-  type = string
-}
-
-variable "nodes" {
-  description = "Worker nodes (e.g. `2`)"
-  default     = 2
+variable "enable_regional_cluster" {
+  description = "Create regional GKE cluster instead of zonal"
+  type = bool
+  default = false
 }
 
 variable "random_cluster_suffix" {
   description = "Random 6 byte hex suffix for cluster name"
   type = string
+  default = ""
 }
-
 
 variable "gcp_project" {
   description = "GCP Project ID"
@@ -26,25 +22,37 @@ variable "gcp_project" {
 }
 
 variable "gcp_region" {
-  description = "GCP region (e.g. `europe-west3` => Frankfurt)"
+  description = "GCP region (e.g. `europe-west3-c` => Frankfurt)"
   type        = string
   default     = "europe-west3"
 }
 
 variable "gke_name" {
-  description = "GKE cluster name (e.g. `k8s-gke`)"
+  description = "GKE cluster name (e.g. `k8s`)"
   type        = string
-  default     = "k8s-gke"
+  default     = "k8s"
 }
 
 variable "gke_pool_name" {
-  description = "GKE Node Pool name (e.g. `k8s-gke-nodepool`)"
+  description = "GKE node pool name (e.g. `k8snodepool`)"
   type        = string
-  default     = "k8s-gke-nodepool"
+  default     = "k8snodepool"
+}
+
+variable "gke_nodes" {
+  description = "GKE Kubernetes worker nodes (e.g. `2`)"
+  type = number
+  default     = 2
+}
+
+variable "gke_preemptible" {
+  description = "Use GKE preemptible nodes (e.g. `false`)"
+  type = bool
+  default = false
 }
 
 variable "gke_node_type" {
-  description = "GKE Node Instance Type (e.g. `n1-standard-1` => 1vCPU, 3.75 GB RAM)"
+  description = "GKE node instance type (e.g. `n1-standard-1` => 1vCPU, 3.75 GB RAM)"
   type        = string
   default     = "n1-standard-1"
 }
