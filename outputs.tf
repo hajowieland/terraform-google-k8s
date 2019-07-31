@@ -1,6 +1,6 @@
 
 output "kubeconfig_path_gke" {
-  value = "${local_file.kubeconfiggke.0.filename}"
+  value = local_file.kubeconfiggke.0.filename
 }
 
 output "latest_k8s_master_version" {

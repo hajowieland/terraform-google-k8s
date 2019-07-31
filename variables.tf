@@ -6,14 +6,14 @@ variable "enable_google" {
 
 variable "enable_regional_cluster" {
   description = "Create regional GKE cluster instead of zonal"
-  type = bool
-  default = false
+  type        = bool
+  default     = false
 }
 
 variable "random_cluster_suffix" {
   description = "Random 6 byte hex suffix for cluster name"
-  type = string
-  default = ""
+  type        = string
+  default     = ""
 }
 
 variable "gcp_project" {
@@ -41,14 +41,14 @@ variable "gke_pool_name" {
 
 variable "gke_nodes" {
   description = "GKE Kubernetes worker nodes (e.g. `2`)"
-  type = number
+  type        = number
   default     = 2
 }
 
 variable "gke_preemptible" {
   description = "Use GKE preemptible nodes (e.g. `false`)"
-  type = bool
-  default = false
+  type        = bool
+  default     = false
 }
 
 variable "gke_node_type" {
@@ -56,11 +56,6 @@ variable "gke_node_type" {
   type        = string
   default     = "n1-standard-1"
 }
-
-# variable "gke_node_count" {
-#   description = "GKE number of nodes in node pool (e.g. `2`)"
-#   default     = 2
-# }
 
 variable "gke_serviceaccount" {
   description = "GCP service account for GKE (e.g. `default`)"
@@ -70,11 +65,11 @@ variable "gke_serviceaccount" {
 
 variable "gke_oauth_scopes" {
   description = "GCP OAuth scopes for GKE (https://www.terraform.io/docs/providers/google/r/container_cluster.html#oauth_scopes)"
-  type = list
+  type        = list
   default = [
-      "https://www.googleapis.com/auth/compute",
-      "https://www.googleapis.com/auth/devstorage.read_only",
-      "https://www.googleapis.com/auth/logging.write",
-      "https://www.googleapis.com/auth/monitoring"
+    "https://www.googleapis.com/auth/compute",
+    "https://www.googleapis.com/auth/devstorage.read_only",
+    "https://www.googleapis.com/auth/logging.write",
+    "https://www.googleapis.com/auth/monitoring"
   ]
 }
