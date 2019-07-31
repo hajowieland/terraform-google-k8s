@@ -17,7 +17,7 @@ It uses the latest available Kubernetes version available in the Google Cloud lo
 
 # Requirements
 
-You need a [Google Cloud](https://cloud.google.com/free-trial/) account with billing enabled (if you already exceeded the Trial).
+You need a [Google Cloud](https://cloud.google.com/free-trial/)  account with billing enabled (if you already exceeded the Trial).
 
 
 # Features
