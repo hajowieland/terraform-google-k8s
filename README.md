@@ -4,6 +4,10 @@ This repository contains the Terraform module for creating a simple but ready-to
 
 It uses the latest available Kubernetes version available in the Google Cloud location and creates a kubeconfig file at completion.
 
+<p align="center">
+<img alt="Google Cloud Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Google_Cloud_Logo.svg/320px-Google_Cloud_Logo.svg.png">
+</p>
+
 
 - [Terraform Kubernetes on Google Cloud](#Terraform-Kubernetes-on-Google-Cloud)
 - [Requirements](#Requirements)
