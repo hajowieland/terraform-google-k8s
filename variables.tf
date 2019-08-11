@@ -52,9 +52,9 @@ variable "gke_preemptible" {
 }
 
 variable "gke_node_type" {
-  description = "GKE node instance type (e.g. `n1-standard-1` => 1vCPU, 3.75 GB RAM)"
+  description = "GKE node instance type (e.g. `n1-standard-2` => 1vCPU, 7.5 GB RAM)"
   type        = string
-  default     = "n1-standard-1"
+  default     = "n1-standard-2"
 }
 
 variable "gke_serviceaccount" {
@@ -65,7 +65,7 @@ variable "gke_serviceaccount" {
 
 variable "gke_oauth_scopes" {
   description = "GCP OAuth scopes for GKE (https://www.terraform.io/docs/providers/google/r/container_cluster.html#oauth_scopes)"
-  type        = list
+  type        = list(string)
   default = [
     "https://www.googleapis.com/auth/compute",
     "https://www.googleapis.com/auth/devstorage.read_only",
