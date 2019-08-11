@@ -41,7 +41,7 @@ See tables at the end for a comprehensive list of inputs and outputs.
 
 
 * Default region: **europe-west3** _(Frankfurt, Germany)_
-* Default node type: **n1-standard-1** _(1x vCPU, 3.75GB memory)_
+* Default node type: **n1-standard-2** _(1x vCPU, 7.5GB memory)_
 * Default node pool size: **2**
 
 
@@ -83,7 +83,7 @@ See tables at the end for a comprehensive list of inputs and outputs.
 | gke_pool_name | GKE node pool name | string | k8snodepool | yes |
 | gke_nodes | GKE Kubernetes worker nodes | number | 2 | yes |
 | gke_preemptible | Use GKE [preemptible](https://cloud.google.com/kubernetes-engine/docs/how-to/preemptible-vms) nodes | bool | false | yes |
-| gke_node_type | GKE node instance type | string | false | yes |
+| gke_node_type | GKE node instance type | string | n1-standard-2 | yes |
 | gke_serviceaccount | GCP service account for GKE | string | default | yes |
 | gke_oauth_scopes | GCP [OAuth](https://www.terraform.io/docs/providers/google/r/container_cluster.html#oauth_scopes) scopes for GKE | list | "https://www.googleapis.com/auth/compute", "https://www.googleapis.com/auth/devstorage.read_only", "https://www.googleapis.com/auth/logging.write", "https://www.googleapis.com/auth/monitoring" | yes |
 
