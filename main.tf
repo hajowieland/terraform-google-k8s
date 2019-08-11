@@ -61,9 +61,9 @@ resource "google_container_cluster" "gke" {
     http_load_balancing {
       disabled = false
     }
-    horizontal_pod_autoscaling {
-      disabled = true
-    }
+    //    horizontal_pod_autoscaling {
+    //      disabled = true
+    //    }
   }
 
   master_auth {
