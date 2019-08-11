@@ -75,17 +75,17 @@ See tables at the end for a comprehensive list of inputs and outputs.
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | enable_google | Enable / Disable Google Cloud k8s | bool | true | yes |
-| enable_regional_cluster | Create regional GKE cluster instead of zonal | bool | true | yes |
-| random_cluster_suffix | Random 6 byte hex suffix for cluster name | string |  | yes |
+| enable_regional_cluster | Create regional GKE cluster instead of zonal | bool | true | no |
+| random_cluster_suffix | Random 6 byte hex suffix for cluster name | string |  | no |
 | gcp_project | GCP Project ID | string |   | yes |
-| gcp_region | GCP region | string | europe-west3 | yes |
-| gke_name | GKE cluster name | string | k8s | yes |
-| gke_pool_name | GKE node pool name | string | k8snodepool | yes |
-| gke_nodes | GKE Kubernetes worker nodes | number | 2 | yes |
-| gke_preemptible | Use GKE [preemptible](https://cloud.google.com/kubernetes-engine/docs/how-to/preemptible-vms) nodes | bool | false | yes |
-| gke_node_type | GKE node instance type | string | n1-standard-2 | yes |
-| gke_serviceaccount | GCP service account for GKE | string | default | yes |
-| gke_oauth_scopes | GCP [OAuth](https://www.terraform.io/docs/providers/google/r/container_cluster.html#oauth_scopes) scopes for GKE | list | "https://www.googleapis.com/auth/compute", "https://www.googleapis.com/auth/devstorage.read_only", "https://www.googleapis.com/auth/logging.write", "https://www.googleapis.com/auth/monitoring" | yes |
+| gcp_region | GCP region | string | europe-west3 | no |
+| gke_name | GKE cluster name | string | k8s | no |
+| gke_pool_name | GKE node pool name | string | k8snodepool | no |
+| gke_nodes | GKE Kubernetes worker nodes | number | 2 | no |
+| gke_preemptible | Use GKE [preemptible](https://cloud.google.com/kubernetes-engine/docs/how-to/preemptible-vms) nodes | bool | false | no |
+| gke_node_type | GKE node instance type | string | n1-standard-2 | no |
+| gke_serviceaccount | GCP service account for GKE | string | default | no |
+| gke_oauth_scopes | GCP [OAuth](https://www.terraform.io/docs/providers/google/r/container_cluster.html#oauth_scopes) scopes for GKE | list(string) | "https://www.googleapis.com/auth/compute", "https://www.googleapis.com/auth/devstorage.read_only", "https://www.googleapis.com/auth/logging.write", "https://www.googleapis.com/auth/monitoring" | no |
 
 
 
@@ -95,5 +95,4 @@ See tables at the end for a comprehensive list of inputs and outputs.
 |------|-------------|
 | kubeconfig_path_gke | Kubernetes kubeconfig file |
 | latest_k8s_master_version | Latest Kubernetes master Version available in Google Cloud location |
-| latest_k8s_node_version | Latest Kubernetes node Version available in Google Cloud location |
 
